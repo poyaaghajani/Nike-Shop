@@ -47,6 +47,12 @@ dependencies:
   webview_flutter: ^3.0.4
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  flutter_launcher_icons: "^0.11.0"
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon.png"
+  min_sdk_android: 21
 
 
 dev_dependencies:
