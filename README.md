@@ -38,7 +38,8 @@ Technologies used in the project:
 *   
 
 <h3>🦖 ScreenShots</h3> 
-![Screenshot_20230519-000216](https://github.com/poyaaghajani/Nike-Shop/assets/107408431/e8895a15-f917-4f36-a189-f5e1feb8c0c4)
+
+![Screenshot_20230519-000216](https://github.com/poyaaghajani/Nike-Shop/assets/107408431/4bd2915c-630d-4d0d-829b-931f5670c47a)
 
 
 
