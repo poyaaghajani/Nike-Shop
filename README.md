@@ -1,6 +1,6 @@
 <h1 align="center" id="title">Nike Shop</h1>
 
-<p id="description">A store project that helps you find any shoes you want with soft and beauty UI/UX and lost of features</p>
+<p id="description">A shopping app project that helps you find any shoes you want with soft and beauty UI/UX and lost of features</p>
 
  
 <h2>🦉 Features</h2>
