@@ -35,7 +35,6 @@ Technologies used in the project:
 *   Intl
 *   Pull_to_refresh
 *   Another_flushbar
-*   
 
 <h3>🦖 ScreenShots</h3> 
 
