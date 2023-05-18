@@ -4,7 +4,7 @@ import 'package:nike/config/light_color.dart';
 import 'package:nike/core/utils/default_physics.dart';
 import 'package:nike/core/utils/devise_size.dart';
 import 'package:nike/core/widgets/cached_image.dart';
-import 'package:nike/core/widgets/custom_buton.dart';
+import 'package:nike/core/widgets/custom_state.dart';
 import 'package:nike/core/widgets/loading_widget.dart';
 import 'package:nike/features/home_feature/data/model/product.dart';
 import 'package:nike/features/home_feature/data/repository/banner.repository.dart';
@@ -94,21 +94,11 @@ class HomeScreen extends StatelessWidget {
                 );
               }
               if (state is HomeErrorState) {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(state.exeption.message),
-                      SizedBox(height: DeviseSize.getHeight(context) / 85),
-                      CustomButton(
-                        onPressed: () {
-                          BlocProvider.of<HomeBloc>(context).add(HomeRefresh());
-                        },
-                        text: 'تلاش دوباره',
-                        color: LightThemeColors.deepNavy,
-                      )
-                    ],
-                  ),
+                return CustomState(
+                  text: state.exeption.message,
+                  image: 'assets/images/no_data.svg',
+                  onTap: () {},
+                  buttonText: 'تلاش دوباره',
                 );
               } else {
                 return Container();

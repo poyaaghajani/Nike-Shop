@@ -3,6 +3,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:nike/core/utils/default_physics.dart';
 import 'package:nike/core/utils/devise_size.dart';
 import 'package:nike/core/widgets/app_bar_icon.dart';
+import 'package:nike/core/widgets/custom_state.dart';
 import 'package:nike/features/home_feature/data/model/product.dart';
 import 'package:nike/features/profile_feature/presentation/widgets/favorite_item.dart';
 
@@ -28,19 +29,27 @@ class FavoriteScreen extends StatelessWidget {
       body: ValueListenableBuilder(
         valueListenable: box.listenable(),
         builder: (context, value, child) {
-          return ListView.builder(
-            physics: defaultPhysics,
-            padding: EdgeInsets.only(
-              bottom: DeviseSize.getHeight(context) / 10,
-              top: DeviseSize.getHeight(context) / 50,
-            ),
-            itemCount: box.values.length,
-            itemBuilder: (context, index) {
-              final item = box.values.toList()[index];
+          return box.isEmpty
+              ? CustomState(
+                  text: 'در حال حاضر کفش مورد علاقه ای ندارید',
+                  image: 'assets/images/empty_cart.svg',
+                  onTap: () {},
+                  bgColor: Colors.grey.shade50,
+                  buttonText: '',
+                )
+              : ListView.builder(
+                  physics: defaultPhysics,
+                  padding: EdgeInsets.only(
+                    bottom: DeviseSize.getHeight(context) / 10,
+                    top: DeviseSize.getHeight(context) / 50,
+                  ),
+                  itemCount: box.values.length,
+                  itemBuilder: (context, index) {
+                    final item = box.values.toList()[index];
 
-              return FavoriteItem(item: item);
-            },
-          );
+                    return FavoriteItem(item: item);
+                  },
+                );
         },
       ),
     );

@@ -41,19 +41,27 @@ class OrderRecordScreen extends StatelessWidget {
                 return const LoadingWidget();
               }
               if (state is OrderRecordSuccessState) {
-                return ListView.builder(
-                  padding: EdgeInsets.only(
-                    top: DeviseSize.getHeight(context) / 60,
-                    bottom: DeviseSize.getHeight(context) / 11,
-                  ),
-                  physics: defaultPhysics,
-                  itemCount: state.orderModels.length,
-                  itemBuilder: (context, index) {
-                    final item = state.orderModels[index];
+                return state.orderModels.isEmpty
+                    ? CustomState(
+                        text: 'تا کنون خریدی انجام نداده اید',
+                        image: 'assets/images/empty_cart.svg',
+                        onTap: () {},
+                        bgColor: Colors.grey.shade50,
+                        buttonText: '',
+                      )
+                    : ListView.builder(
+                        padding: EdgeInsets.only(
+                          top: DeviseSize.getHeight(context) / 60,
+                          bottom: DeviseSize.getHeight(context) / 11,
+                        ),
+                        physics: defaultPhysics,
+                        itemCount: state.orderModels.length,
+                        itemBuilder: (context, index) {
+                          final item = state.orderModels[index];
 
-                    return RecordItem(item: item);
-                  },
-                );
+                          return RecordItem(item: item);
+                        },
+                      );
               }
               if (state is OrderRecordErrorState) {
                 return CustomState(

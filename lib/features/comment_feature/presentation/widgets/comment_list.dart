@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nike/config/light_color.dart';
 import 'package:nike/core/utils/devise_size.dart';
-import 'package:nike/core/widgets/custom_buton.dart';
 import 'package:nike/core/widgets/custom_snackbar.dart';
+import 'package:nike/core/widgets/custom_state.dart';
 import 'package:nike/core/widgets/loading_widget.dart';
 import 'package:nike/features/comment_feature/data/repository/comment_repository.dart';
 import 'package:nike/features/comment_feature/presentation/bloc/add_comment/add_comment_bloc.dart';
@@ -141,22 +141,11 @@ class _CommentListState extends State<CommentList> {
           }
           if (state is CommentErrorState) {
             return SliverToBoxAdapter(
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(state.exeption.message),
-                    SizedBox(height: DeviseSize.getHeight(context) / 85),
-                    CustomButton(
-                      onPressed: () {
-                        BlocProvider.of<CommentBloc>(context)
-                            .add(CommentRequest());
-                      },
-                      text: 'تلاش دوباره',
-                      color: LightThemeColors.secondaryColor,
-                    )
-                  ],
-                ),
+              child: CustomState(
+                text: state.exeption.message,
+                image: 'assets/images/no_data.svg',
+                onTap: () {},
+                buttonText: 'تلاش دوباره',
               ),
             );
           } else {
