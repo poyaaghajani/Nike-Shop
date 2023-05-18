@@ -1,16 +1,40 @@
-# nike
+<h1 align="center" id="title">Nike Shop</h1>
 
-A new Flutter project.
+<p id="description">A store project that helps you find any shoes you want with soft and beauty UI/UX and lost of features</p>
 
-## Getting Started
+ 
+<h2>🦉 Features</h2>
 
-This project is a starting point for a Flutter application.
+Here're some of the project's best features:
 
-A few resources to get you started if this is your first Flutter project:
+*   SingUp
+*   LogIn
+*   Online Order Registration
+*   Pay Online
+*   Pay at Home
+*   Receive Order Receipt
+*   Watch Order History
+*   Add Comment
+*   Add to Basket
+*   Add to Favorite List
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  
+<h2>💻 Built with</h2>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Technologies used in the project:
+
+*   Bloc
+*   Hive
+*   Webview_flutter
+*   Equatable
+*   Shared_preferences
+*   Dio
+*   Cached_network_image
+*   Shimmer
+*   Flutter_svg
+*   Intl
+*   Pull_to_refresh
+*   Another_flushbar
+*   
+
+<h3>🦖 ScreenShots</h3> 
